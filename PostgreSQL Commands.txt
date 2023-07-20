@@ -190,3 +190,14 @@ test=# SELECT * FROM person OFFSET 20 FETCH FIRST 5 ROW ONLY;
 
 
 
+In PostgreSQL, the IN operator is used in the WHERE clause to check if a value matches any value in a specified list. 
+It allows you to simplify queries when you want to compare a column against multiple values. The IN operator returns true if the 
+value being tested matches any of the values in the list.
+
+Example:
+
+Let's assume we have a table called "employees" with columns: "employee_id", "first_name", and "department".
+
+-- Query to retrieve employees from the 'Sales' and 'Marketing' departments
+SELECT employee_id, first_name FROM employees WHERE department IN ('Sales', 'Marketing');
+
