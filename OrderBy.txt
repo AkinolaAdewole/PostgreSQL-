@@ -30,3 +30,12 @@ SELECT * FROM <name of table> ORDER BY first_name DESC;
 SELECT * FROM <name of table> ORDER BY last_name DESC;
 SELECT * FROM <name of table> ORDER BY gender DESC;
 SELECT * FROM <name of table> ORDER BY country_of_birth DESC;
+
+
+
+WHERE  clause
+
+
+In PostgreSQL, the WHERE clause is used in a SELECT, UPDATE, or DELETE statement to filter the rows returned by a query or the rows 
+that are affected by an update or delete operation. It allows you to specify a condition that must be met for a row to be included in 
+the result set or be updated/deleted.
