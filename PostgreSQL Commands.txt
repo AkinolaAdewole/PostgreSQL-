@@ -249,3 +249,4 @@ LIKE and ILIKE
 In PostgreSQL, the ILIKE operator is used for case-insensitive pattern matching in the WHERE clause of a SELECT, UPDATE, or DELETE 
 statement. It is similar to the LIKE operator, but ILIKE performs a case-insensitive comparison, meaning it will match patterns 
 regardless of the letter's case.
+
