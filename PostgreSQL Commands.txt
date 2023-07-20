@@ -27,3 +27,6 @@ OR
 
 2. Creating a new database:
 CREATE DATABASE database_name;
+
+3.Dropping a database
+   DROP DATABASE database_name;
