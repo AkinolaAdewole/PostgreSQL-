@@ -244,3 +244,8 @@ test=# SELECT * FROM person WHERE date_of_birth BETWEEN DATE '2012-01-01' AND '2
   28 | Madalena    | Biggen       | mbiggenr@state.tx.us          | Female      | 2022-10-16    | Brazil
 
 
+LIKE and ILIKE
+
+In PostgreSQL, the ILIKE operator is used for case-insensitive pattern matching in the WHERE clause of a SELECT, UPDATE, or DELETE 
+statement. It is similar to the LIKE operator, but ILIKE performs a case-insensitive comparison, meaning it will match patterns 
+regardless of the letter's case.
