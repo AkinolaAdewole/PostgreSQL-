@@ -129,9 +129,9 @@ SELECT column1, column2, ...
 FROM table_name
 LIMIT number_of_rows;
 
-SELECT product_name, unit_price
-FROM products
-LIMIT 10;
+SELECT product_name, unit_price FROM products LIMIT 10;
+
+SELECT * FROM person LIMIT 20;
 
 2. OFFSET Clause:
 The OFFSET clause is used to skip a specified number of rows from the beginning of the result set. It is often combined with the 
