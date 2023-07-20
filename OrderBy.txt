@@ -1,0 +1,22 @@
+In PostgreSQL, the ORDER BY keyword is used in a SELECT statement to sort the result set based on one or more columns. 
+It allows you to specify the order in which the rows should be returned.
+
+
+
+-- Sorting by a single column in ascending order
+SELECT employee_id, first_name, last_name, salary
+FROM employees
+ORDER BY salary ASC;
+
+ASC --- ASCENDING
+DESC --- DESCENDING
+
+SELECT * FROM <name of table> ORDER BY first_name;
+SELECT * FROM <name of table> ORDER BY last_name;
+SELECT * FROM <name of table> ORDER BY gender;
+SELECT * FROM <name of table> ORDER BY country_of_birth;
+
+SELECT * FROM <name of table> ORDER BY first_name DESC;
+SELECT * FROM <name of table> ORDER BY last_name DESC;
+SELECT * FROM <name of table> ORDER BY gender DESC;
+SELECT * FROM <name of table> ORDER BY country_of_birth DESC;
