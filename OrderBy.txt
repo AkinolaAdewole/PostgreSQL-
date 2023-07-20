@@ -8,13 +8,23 @@ SELECT employee_id, first_name, last_name, salary
 FROM employees
 ORDER BY salary ASC;
 
+-- Sorting by a single column in descending order
+SELECT employee_id, first_name, last_name, salary
+FROM employees
+ORDER BY salary DESC;
+
+
 ASC --- ASCENDING
 DESC --- DESCENDING
 
 SELECT * FROM <name of table> ORDER BY first_name;
 SELECT * FROM <name of table> ORDER BY last_name;
 SELECT * FROM <name of table> ORDER BY gender;
+SELECT * FROM <name of table> ORDER BY id;
+SELECT * FROM <name of table> ORDER BY email;
 SELECT * FROM <name of table> ORDER BY country_of_birth;
+
+SELECT * FROM <name of table> ORDER BY id, email;
 
 SELECT * FROM <name of table> ORDER BY first_name DESC;
 SELECT * FROM <name of table> ORDER BY last_name DESC;
