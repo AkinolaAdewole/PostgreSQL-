@@ -189,6 +189,7 @@ test=# SELECT * FROM person OFFSET 20 FETCH FIRST 5 ROW ONLY;
 (5 rows)
 
 
+  IN operator
 
 In PostgreSQL, the IN operator is used in the WHERE clause to check if a value matches any value in a specified list. 
 It allows you to simplify queries when you want to compare a column against multiple values. The IN operator returns true if the 
@@ -200,4 +201,46 @@ Let's assume we have a table called "employees" with columns: "employee_id", "fi
 
 -- Query to retrieve employees from the 'Sales' and 'Marketing' departments
 SELECT employee_id, first_name FROM employees WHERE department IN ('Sales', 'Marketing');
+
+
+test=# SELECT * FROM person WHERE country_of_birth IN ('China', 'Brazil', 'France');
+ id  | first_name | last_name |             email             |   gender    | date_of_birth | country_of_birth
+-----+------------+-----------+-------------------------------+-------------+---------------+------------------
+   6 | Corbett    | Wilson    | cwilson5@hp.com               | Male        | 2023-04-15    | China
+  17 | Amanda     | Power     | apowerg@yellowbook.com        | Female      | 2022-10-04    | Brazil
+  23 | Cort       | Jouen     | cjouenm@cdc.gov               | Bigender    | 2022-08-31    | Brazil
+  27 | Halette    | Chattaway | hchattawayq@npr.org           | Female      | 2022-10-18    | China
+  28 | Madalena   | Biggen    | mbiggenr@state.tx.us          | Female      | 2022-10-16    | Brazil
+  49 | Jackson    | Saffill   | jsaffill1c@sogou.com          | Male        | 2023-05-08    | China
+  55 | Quintilla  | Hanretty  | qhanretty1i@pbs.org           | Female      | 2023-03-14    | China
+  57 | Arlie      | Sandcraft | asandcraft1k@businesswire.com | Female      | 2022-10-19    | China
+  64 | Josee      | Saphin    | jsaphin1r@engadget.com        | Female      | 2022-12-27    | China
+  71 | Flora      | Negal     | fnegal1y@hibu.com             | Female      | 2023-04-23    | China
+  84 | Pat        | Cheers    | pcheers2b@unesco.org          | Male        | 2023-06-12    | China
+  87 | Julius     | De Cruze  | jdecruze2e@imdb.com           | Male        | 2023-07-12    | China
+  88 | Manya      | Iseton    | miseton2f@reuters.com         | Female      | 2023-03-28    | Brazil
+  90 | Eleanore   | Atmore    | eatmore2h@a8.net              | Female      | 2023-03-31    | China
+  92 | Ardene     | Labes     | alabes2j@a8.net               | Female      | 2023-06-06    | China
+  94 | Perkin     | Orsay     | porsay2l@cdc.gov              | Male        | 2023-03-19    
+
+
+test=# SELECT * FROM person WHERE date_of_birth BETWEEN DATE '2012-01-01' AND '2023-01-01';
+
+ id  | first_name  |  last_name   |             email             |   gender    | date_of_birth | country_of_birth
+-----+-------------+--------------+-------------------------------+-------------+---------------+------------------
+   1 | Lorianna    | Dmitrichenko | ldmitrichenko0@gov.uk         | Female      | 2022-08-21    | United Kingdom
+   4 | Esmaria     | Cunnow       | ecunnow3@earthlink.net        | Agender     | 2022-08-03    | Bolivia
+  10 | Malchy      | Chansonne    | mchansonne9@mac.com           | Male        | 2022-11-02    | Russia
+  11 | Vanya       | Knoller      | vknollera@auda.org.au         | Female      | 2022-12-02    | Venezuela
+  12 | Nils        | Shoreson     | nshoresonb@weebly.com         | Male        | 2022-07-29    | Kazakhstan
+  15 | Doralynn    | Oulet        | doulete@nasa.gov              | Female      | 2022-09-10    | Argentina
+  17 | Amanda      | Power        | apowerg@yellowbook.com        | Female      | 2022-10-04    | Brazil
+  18 | Lusa        | Lodemann     | llodemannh@qq.com             | Female      | 2022-12-01    | Indonesia
+  19 | Tracey      | Fairbard     | tfairbardi@home.pl            | Female      | 2022-09-24    | Honduras
+  20 | Nevsa       | Byre         | nbyrej@abc.net.au             | Female      | 2022-09-07    | Afghanistan
+  23 | Cort        | Jouen        | cjouenm@cdc.gov               | Bigender    | 2022-08-31    | Brazil
+  26 | Bogey       | Hobson       | bhobsonp@stanford.edu         | Male        | 2022-07-31    | Myanmar
+  27 | Halette     | Chattaway    | hchattawayq@npr.org           | Female      | 2022-10-18    | China
+  28 | Madalena    | Biggen       | mbiggenr@state.tx.us          | Female      | 2022-10-16    | Brazil
+
 
