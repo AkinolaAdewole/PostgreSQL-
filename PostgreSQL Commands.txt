@@ -148,6 +148,9 @@ FROM products
 LIMIT 10
 OFFSET 20;
 
+SELECT product_name, unit_price FROM products ORDER BY unit_price DESC LIMIT 5 OFFSET 10;
+
+
 
 test=# SELECT * FROM person OFFSET 20 LIMIT 20;
  id | first_name | last_name  |            email             |   gender   | date_of_birth |   country_of_birth
@@ -184,4 +187,6 @@ test=# SELECT * FROM person OFFSET 20 FETCH FIRST 5 ROW ONLY;
  24 | Drew       | Kaemena   | dkaemenan@blinklist.com     | Male     | 2023-04-21    | South Africa
  25 | Boris      | Balint    | bbalinto@opensource.org     | Male     | 2023-04-23    | Indonesia
 (5 rows)
+
+
 
