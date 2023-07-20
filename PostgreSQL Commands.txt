@@ -291,3 +291,63 @@ test=# SELECT * FROM person WHERE country_of_birth LIKE '%c';
  52 | Inglebert  | Seth      | iseth1f@furl.net  | Male   | 2023-06-08    | Czech Republic
  98 | Maurie     | Paddock   | mpaddock2p@i2i.jp | Male   | 2022-07-27    | Czech Republic
 (2 rows)
+
+
+test=# SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth;
+   country_of_birth    | count
+-----------------------+-------
+ Indonesia             |    10
+ Tajikistan            |     2
+ Venezuela             |     2
+ Uruguay               |     1
+ Russia                |     7
+ China                 |    14
+ Czech Republic        |     2
+ Honduras              |     1
+ Sweden                |     1
+ Armenia               |     1
+ Pakistan              |     1
+ United Kingdom        |     1
+ Netherlands           |     1
+ Brazil                |     4
+ Australia             |     1
+ Germany               |     1
+ Macedonia             |     2
+ Bolivia               |     1
+ Sri Lanka             |     1
+ Portugal              |     4
+ Colombia              |     1
+ Yemen                 |     1
+ Albania               |     3
+ Ukraine               |     1
+ Namibia               |     1
+ Argentina             |     1
+ Greece                |     1
+ Afghanistan           |     1
+ Kyrgyzstan            |     2
+ Morocco               |     1
+ Iran                  |     2
+ Chile                 |     1
+ Myanmar               |     2
+ Vietnam               |     1
+ Djibouti              |     1
+ Mexico                |     1
+ South Africa          |     2
+ Tanzania              |     1
+ Kazakhstan            |     2
+ Palestinian Territory |     1
+ Poland                |     4
+ French Guiana         |     1
+ Japan                 |     1
+ Philippines           |     5
+ Thailand              |     1
+ United States         |     3
+(46 rows)
+
+HAVING Clause:
+The HAVING clause is used to filter the results of the GROUP BY clause based on specified conditions. It acts as a filter for 
+aggregated values, allowing you to include or exclude groups based on aggregate function results.
+
+Example:
+
+Using the same "orders" table as above, let's find customers whose total order amount is greater than $500.
