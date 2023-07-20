@@ -12,6 +12,8 @@ INSERT INTO person (first_name, last_name, gender, date_of_birth, email)
         VALUES ('Anne', 'Jakes', FEMALE', date '2000-01-23' );
 
 
+SELECT * FROM person;
+
 
 
 
