@@ -10,3 +10,20 @@ CREATE TABLE person (
 
 INSERT INTO person (first_name, last_name, gender, date_of_birth, email)
         VALUES ('Anne', 'Jakes', FEMALE', date '2000-01-23' );
+
+
+
+
+
+PostgreSQL is a powerful open-source relational database management system. 
+
+Below are some essential PostgreSQL commands:
+
+1.
+psql -U <username> -d <database_name> -h <host> -p <port>
+OR 
+\c <database_name>
+
+
+2. Creating a new database:
+CREATE DATABASE database_name;
