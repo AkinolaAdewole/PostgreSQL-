@@ -147,3 +147,41 @@ SELECT product_name, unit_price
 FROM products
 LIMIT 10
 OFFSET 20;
+
+
+test=# SELECT * FROM person OFFSET 20 LIMIT 20;
+ id | first_name | last_name  |            email             |   gender   | date_of_birth |   country_of_birth
+----+------------+------------+------------------------------+------------+---------------+-----------------------
+ 21 | Clemmie    | Rowbotham  | crowbothamk@theatlantic.com  | Male       | 2023-04-04    | Russia
+ 22 | Cyrill     | Ielden     | cieldenl@wufoo.com           | Male       | 2023-01-15    | Poland
+ 23 | Cort       | Jouen      | cjouenm@cdc.gov              | Bigender   | 2022-08-31    | Brazil
+ 24 | Drew       | Kaemena    | dkaemenan@blinklist.com      | Male       | 2023-04-21    | South Africa
+ 25 | Boris      | Balint     | bbalinto@opensource.org      | Male       | 2023-04-23    | Indonesia
+ 26 | Bogey      | Hobson     | bhobsonp@stanford.edu        | Male       | 2022-07-31    | Myanmar
+ 27 | Halette    | Chattaway  | hchattawayq@npr.org          | Female     | 2022-10-18    | China
+ 28 | Madalena   | Biggen     | mbiggenr@state.tx.us         | Female     | 2022-10-16    | Brazil
+ 29 | Jon        | Kettlewell | jkettlewells@theguardian.com | Polygender | 2022-10-31    | Portugal
+ 30 | Greer      | Rihosek    | grihosekt@taobao.com         | Female     | 2023-01-19    | Albania
+ 31 | Korrie     | Versey     | kverseyu@cyberchimps.com     | Female     | 2023-05-26    | United States
+ 32 | Steffie    | Leftley    | sleftleyv@huffingtonpost.com | Female     | 2022-09-30    | Poland
+ 33 | Luella     | Boost      | lboostw@cyberchimps.com      | Female     | 2023-02-08    | Iran
+ 34 | Cherilynn  | Freear     | cfreearx@va.gov              | Female     | 2023-02-20    | Tanzania
+ 35 | Egon       | Stoate     | estoatey@toplist.cz          | Male       | 2022-11-20    | Venezuela
+ 36 | Allys      | Asch       | aaschz@usa.gov               | Female     | 2023-01-25    | Tajikistan
+ 37 | Manda      | Raiston    | mraiston10@uol.com.br        | Non-binary | 2023-03-03    | Palestinian Territory
+ 38 | Axe        | Cogin      | acogin11@cocolog-nifty.com   | Male       | 2022-09-06    | Philippines
+ 39 | Darby      | Scutter    | dscutter12@nhs.uk            | Agender    | 2023-06-19    | Indonesia
+ 40 | Oby        | Craw       | ocraw13@globo.com            | Male       | 2022-10-25    | Macedonia
+(20 rows)
+
+
+test=# SELECT * FROM person OFFSET 20 FETCH FIRST 5 ROW ONLY;
+ id | first_name | last_name |            email            |  gender  | date_of_birth | country_of_birth
+----+------------+-----------+-----------------------------+----------+---------------+------------------
+ 21 | Clemmie    | Rowbotham | crowbothamk@theatlantic.com | Male     | 2023-04-04    | Russia
+ 22 | Cyrill     | Ielden    | cieldenl@wufoo.com          | Male     | 2023-01-15    | Poland
+ 23 | Cort       | Jouen     | cjouenm@cdc.gov             | Bigender | 2022-08-31    | Brazil
+ 24 | Drew       | Kaemena   | dkaemenan@blinklist.com     | Male     | 2023-04-21    | South Africa
+ 25 | Boris      | Balint    | bbalinto@opensource.org     | Male     | 2023-04-23    | Indonesia
+(5 rows)
+
