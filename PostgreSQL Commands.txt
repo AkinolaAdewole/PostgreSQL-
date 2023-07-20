@@ -32,3 +32,9 @@ CREATE DATABASE database_name;
 
 3.Dropping a database
    DROP DATABASE database_name;
+
+4. Select all data from database:
+   SELECT * FROM <database>;
+
+5. Selecting first_name from a table:
+    SELECT first_name FROM <name of table>;
