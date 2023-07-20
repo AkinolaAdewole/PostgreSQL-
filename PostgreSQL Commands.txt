@@ -113,3 +113,37 @@ SELECT * FROM table_name WHERE column_name = value;
 
 7. IS NULL: Checks if a value is NULL (i.e., it has no value).
    SELECT * FROM table_name WHERE column_name IS NULL;
+
+
+
+   
+In PostgreSQL, the LIMIT and OFFSET clauses are used to control the number of rows returned by a query. 
+They are often used together to implement pagination, allowing you to retrieve a subset of rows from a result set.
+
+1. LIMIT Clause:
+The LIMIT clause specifies the maximum number of rows to be returned by a query. 
+It is generally used at the end of a SELECT statement. 
+The syntax is as follows:
+
+SELECT column1, column2, ...
+FROM table_name
+LIMIT number_of_rows;
+
+SELECT product_name, unit_price
+FROM products
+LIMIT 10;
+
+2. OFFSET Clause:
+The OFFSET clause is used to skip a specified number of rows from the beginning of the result set. It is often combined with the 
+LIMIT clause to implement pagination. 
+The syntax is as follows:
+
+SELECT column1, column2, ...
+FROM table_name
+LIMIT number_of_rows
+OFFSET offset_value;
+
+SELECT product_name, unit_price
+FROM products
+LIMIT 10
+OFFSET 20;
