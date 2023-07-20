@@ -351,3 +351,35 @@ aggregated values, allowing you to include or exclude groups based on aggregate 
 Example:
 
 Using the same "orders" table as above, let's find customers whose total order amount is greater than $500.
+
+-- Query to find customers with total order amount greater than $500
+
+SELECT customer_id, SUM(order_total) AS total_amount FROM orders GROUP BY customer_id HAVING SUM(order_total) > 500;
+
+test=# SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 5 ORDER BY country_of_birth;
+ country_of_birth | count
+------------------+-------
+ China            |    14
+ Indonesia        |    10
+ Russia           |     7
+(3 rows)
+
+test=# SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 2 ORDER BY country_of_birth;
+ country_of_birth | count
+------------------+-------
+ Albania          |     3
+ Brazil           |     4
+ China            |    14
+ Indonesia        |    10
+ Philippines      |     5
+ Poland           |     4
+ Portugal         |     4
+ Russia           |     7
+ United States    |     3
+(9 rows)
+
+
+
+
+GROUP BY clause must be specified before the HAVING clause. The GROUP BY clause defines the groups, and the HAVING clause filters the 
+groups based on the specified conditions after the aggregation is done.
