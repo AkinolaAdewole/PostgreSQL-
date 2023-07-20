@@ -250,3 +250,44 @@ In PostgreSQL, the ILIKE operator is used for case-insensitive pattern matching 
 statement. It is similar to the LIKE operator, but ILIKE performs a case-insensitive comparison, meaning it will match patterns 
 regardless of the letter's case.
 
+-- Query to retrieve products with names containing 'apple' (case-insensitive)
+
+SELECT product_name, unit_price FROM products WHERE product_name ILIKE '%apple%';
+
+test=# SELECT * FROM person WHERE email LIKE '%.com';
+
+ id | first_name  | last_name  |               email                |   gender   | date_of_birth | country_of_birth
+----+-------------+------------+------------------------------------+------------+---------------+------------------
+  3 | Boyd        | McClymont  | bmcclymont2@addthis.com            | Male       | 2023-01-02    | Albania
+  6 | Corbett     | Wilson     | cwilson5@hp.com                    | Male       | 2023-04-15    | China
+  9 | Immanuel    | Checcucci  | icheccucci8@nationalgeographic.com | Male       | 2023-06-30    | Sweden
+ 10 | Malchy      | Chansonne  | mchansonne9@mac.com                | Male       | 2022-11-02    | Russia
+ 12 | Nils        | Shoreson   | nshoresonb@weebly.com              | Male       | 2022-07-29    | Kazakhstan
+ 17 | Amanda      | Power      | apowerg@yellowbook.com             | Female     | 2022-10-04    | Brazil
+ 18 | Lusa        | Lodemann   | llodemannh@qq.com                  | Female     | 2022-12-01    | Indonesia
+ 21 | Clemmie     | Rowbotham  | crowbothamk@theatlantic.com        | Male       | 2023-04-04    | Russia
+ 22 | Cyrill      | Ielden     | cieldenl@wufoo.com                 | Male       | 2023-01-15    | Poland
+ 24 | Drew        | Kaemena    | dkaemenan@blinklist.com            | Male       | 2023-04-21    | South Africa 29 | Jon         | Kettlewell | jkettlewells@theguardian.com       | Polygender | 2022-10-31    | Portugal
+ 30 | Greer       | Rihosek    | grihosekt@taobao.com               | Female     | 2023-01-19    | Albania
+ 31 | Korrie      | Versey     | kverseyu@cyberchimps.com           | Female     | 2023-05-26    | United States
+ 32 | Steffie     | Leftley    | sleftleyv@huffingtonpost.com       | Female     | 2022-09-30    | Poland
+ 33 | Luella      | Boost      | lboostw@cyberchimps.com            | Female     | 2023-02-08    | Iran
+ 38 | Axe         | Cogin      | acogin11@cocolog-nifty.com         | Male       | 2022-09-06    | Philippines
+ 40 | Oby         | Craw       | ocraw13@globo.com                  | Male       | 2022-10-25    | Macedonia
+ 41 | Nickolaus   | Pescott    | npescott14@youtube.com             | Male       | 2023-01-27    | Ukraine
+ 42 | Conway      | Fasham     | cfasham15@squidoo.com              | Male       | 2023-07-05    | Macedonia
+ 47 | Kary        | Worge      | kworge1a@nbcnews.com               | Female     | 2023-05-25    | Thailand
+
+
+test=# SELECT * FROM person WHERE email LIKE '%bloomberg.com';
+ id | first_name | last_name |          email          | gender | date_of_birth | country_of_birth
+----+------------+-----------+-------------------------+--------+---------------+------------------
+ 83 | Katerine   | Nilges    | knilges2a@bloomberg.com | Female | 2023-07-04    | Russia
+(1 row)
+
+test=# SELECT * FROM person WHERE country_of_birth LIKE '%c';
+ id | first_name | last_name |       email       | gender | date_of_birth | country_of_birth
+----+------------+-----------+-------------------+--------+---------------+------------------
+ 52 | Inglebert  | Seth      | iseth1f@furl.net  | Male   | 2023-06-08    | Czech Republic
+ 98 | Maurie     | Paddock   | mpaddock2p@i2i.jp | Male   | 2022-07-27    | Czech Republic
+(2 rows)
